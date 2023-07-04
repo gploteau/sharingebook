@@ -12,6 +12,13 @@ module.exports = require("get-audio-duration");
 
 /***/ }),
 
+/***/ 1490:
+/***/ ((module) => {
+
+module.exports = require("md5");
+
+/***/ }),
+
 /***/ 3916:
 /***/ ((module) => {
 
@@ -52,6 +59,7 @@ music_metadata__WEBPACK_IMPORTED_MODULE_2__ = (__webpack_async_dependencies__.th
 
 
 const { getAudioDurationInSeconds } = __webpack_require__(1108);
+const md5 = __webpack_require__(1490);
 const getTracks = async ()=>{
     const dirRelativeToPublicFolder = "sound";
     const db_file = path__WEBPACK_IMPORTED_MODULE_1___default().resolve("./public", "db.json");
@@ -72,6 +80,7 @@ const getTracks = async ()=>{
             return metaData.then((metadata)=>{
                 let cover = metadata.common.picture ? "data:" + metadata.common.picture[0].format + ";base64," + Buffer.from(metadata.common.picture[0].data).toString("base64") : "";
                 return {
+                    id: md5(name),
                     duration: duration,
                     file: path__WEBPACK_IMPORTED_MODULE_1___default().join("/", dirRelativeToPublicFolder, name),
                     title: metadata.common.title || name,

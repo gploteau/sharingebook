@@ -68,6 +68,22 @@ module.exports = require("next/dist/server/future/helpers/interception-routes.js
 
 /***/ }),
 
+/***/ 3918:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/amp-context.js");
+
+/***/ }),
+
+/***/ 5732:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/amp-mode.js");
+
+/***/ }),
+
 /***/ 3280:
 /***/ ((module) => {
 
@@ -84,11 +100,51 @@ module.exports = require("next/dist/shared/lib/hash.js");
 
 /***/ }),
 
+/***/ 2796:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/head-manager-context.js");
+
+/***/ }),
+
 /***/ 9274:
 /***/ ((module) => {
 
 "use strict";
 module.exports = require("next/dist/shared/lib/hooks-client-context.js");
+
+/***/ }),
+
+/***/ 4486:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/image-blur-svg.js");
+
+/***/ }),
+
+/***/ 744:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/image-config-context.js");
+
+/***/ }),
+
+/***/ 5843:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/image-config.js");
+
+/***/ }),
+
+/***/ 9552:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/image-loader");
 
 /***/ }),
 
@@ -137,6 +193,22 @@ module.exports = require("next/dist/shared/lib/router/utils/remove-trailing-slas
 
 "use strict";
 module.exports = require("next/dist/shared/lib/server-inserted-html.js");
+
+/***/ }),
+
+/***/ 2470:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/side-effect.js");
+
+/***/ }),
+
+/***/ 618:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/utils/warn-once.js");
 
 /***/ }),
 
@@ -271,7 +343,7 @@ Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_
 Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 6249, 23));
 Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 7844, 23));
 Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 1522, 23));
-Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 3100, 23))
+Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_require__, 8782, 23))
 
 /***/ }),
 
@@ -285,11 +357,11 @@ Promise.resolve(/* import() eager */).then(__webpack_require__.t.bind(__webpack_
 /***/ 1543:
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 1319))
+Promise.resolve(/* import() eager */).then(__webpack_require__.bind(__webpack_require__, 2357))
 
 /***/ }),
 
-/***/ 1319:
+/***/ 2357:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -305,8 +377,13 @@ __webpack_require__.d(__webpack_exports__, {
 var jsx_runtime_ = __webpack_require__(6786);
 // EXTERNAL MODULE: external "next/dist/compiled/react"
 var react_ = __webpack_require__(8038);
-// EXTERNAL MODULE: ./node_modules/@fortawesome/react-fontawesome/index.js
-var react_fontawesome = __webpack_require__(8195);
+// EXTERNAL MODULE: ./node_modules/react-cookie/cjs/index.js
+var cjs = __webpack_require__(5786);
+// EXTERNAL MODULE: ./node_modules/next/navigation.js
+var navigation = __webpack_require__(9483);
+// EXTERNAL MODULE: ./node_modules/next/image.js
+var next_image = __webpack_require__(8421);
+var image_default = /*#__PURE__*/__webpack_require__.n(next_image);
 // EXTERNAL MODULE: ./src/app/components/trackList.scss
 var trackList = __webpack_require__(7093);
 ;// CONCATENATED MODULE: ./public/assets/icons/back-btn-23.svg
@@ -343,13 +420,32 @@ var SvgHeartIcon = function SvgHeartIcon(props) {
   })));
 };
 /* harmony default export */ const heart_icon = (SvgHeartIcon);
+;// CONCATENATED MODULE: ./public/assets/icons/heart-icon-filled-04.svg
+var heart_icon_filled_04_path;
+function heart_icon_filled_04_extends() { heart_icon_filled_04_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return heart_icon_filled_04_extends.apply(this, arguments); }
+
+var SvgHeartIconFilled04 = function SvgHeartIconFilled04(props) {
+  return /*#__PURE__*/react_.createElement("svg", heart_icon_filled_04_extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    xmlSpace: "preserve",
+    style: {
+      enableBackground: "new 0 0 47 45"
+    },
+    viewBox: "0 0 47 45"
+  }, props), heart_icon_filled_04_path || (heart_icon_filled_04_path = /*#__PURE__*/react_.createElement("path", {
+    d: "M46.8 14.8c0 16-21.3 29.1-22.2 29.7-.3.2-.7.3-1 .3-.4 0-.7-.1-1-.3C21.6 43.9.2 30.8.2 14.8.2 6.5 6.2.2 14.1.2c2.6 0 5.1.7 7.3 2 .7.4 1.5.9 2.1 1.5.7-.6 1.4-1 2.1-1.5 2.2-1.3 4.7-2 7.3-2 7.9 0 13.9 6.3 13.9 14.6z"
+  })));
+};
+/* harmony default export */ const heart_icon_filled_04 = (SvgHeartIconFilled04);
 ;// CONCATENATED MODULE: ./src/app/components/tracksList.js
 
 
 
 
 
+
 function TracksList(props) {
+    const [onlyFavorite, setOnlyFavorite] = (0,react_.useState)(false);
     return /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
         className: "tracks-list" + (props.opened ? " opened" : ""),
         children: [
@@ -357,7 +453,11 @@ function TracksList(props) {
                 className: "tracks-list-ctr",
                 id: "tracksListCtr",
                 children: /*#__PURE__*/ jsx_runtime_.jsx("ul", {
-                    children: props.tracks.map((track, index)=>/*#__PURE__*/ jsx_runtime_.jsx("li", {
+                    children: props.tracks.map((track, index)=>{
+                        if (onlyFavorite && !props.favs.includes(track.id)) {
+                            return null;
+                        }
+                        return /*#__PURE__*/ jsx_runtime_.jsx("li", {
                             onClick: ()=>props.setCurrent(index),
                             className: index === props.current ? "active" : "",
                             children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)("span", {
@@ -368,7 +468,8 @@ function TracksList(props) {
                                     track.title
                                 ]
                             })
-                        }, index))
+                        }, index);
+                    })
                 })
             }),
             /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
@@ -391,7 +492,8 @@ function TracksList(props) {
                             }),
                             /*#__PURE__*/ jsx_runtime_.jsx("button", {
                                 className: "favs-btn",
-                                children: /*#__PURE__*/ jsx_runtime_.jsx(heart_icon, {})
+                                onClick: ()=>setOnlyFavorite(!onlyFavorite),
+                                children: onlyFavorite ? /*#__PURE__*/ jsx_runtime_.jsx(heart_icon_filled_04, {}) : /*#__PURE__*/ jsx_runtime_.jsx(heart_icon, {})
                             })
                         ]
                     })
@@ -403,6 +505,19 @@ function TracksList(props) {
 
 // EXTERNAL MODULE: ./src/app/components/player.scss
 var player = __webpack_require__(4458);
+;// CONCATENATED MODULE: ./public/assets/icons/share.svg
+var share_path;
+function share_extends() { share_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return share_extends.apply(this, arguments); }
+
+var SvgShare = function SvgShare(props) {
+  return /*#__PURE__*/react_.createElement("svg", share_extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 24 24"
+  }, props), share_path || (share_path = /*#__PURE__*/react_.createElement("path", {
+    d: "M18 2c-1.645 0-3 1.355-3 3 0 .191.022.377.057.559L7.922 9.72A2.969 2.969 0 0 0 6 9c-1.645 0-3 1.355-3 3s1.355 3 3 3c.732 0 1.399-.278 1.922-.72l7.135 4.16A2.956 2.956 0 0 0 15 19c0 1.645 1.355 3 3 3s3-1.355 3-3-1.355-3-3-3c-.733 0-1.398.28-1.922.723l-7.135-4.164C8.978 12.377 9 12.19 9 12c0-.191-.022-.377-.057-.559l7.135-4.162C16.601 7.722 17.268 8 18 8c1.645 0 3-1.355 3-3s-1.355-3-3-3zm0 2c.564 0 1 .436 1 1 0 .564-.436 1-1 1-.564 0-1-.436-1-1 0-.564.436-1 1-1zM6 11c.564 0 1 .436 1 1 0 .564-.436 1-1 1-.564 0-1-.436-1-1 0-.564.436-1 1-1zm12 7c.564 0 1 .436 1 1 0 .564-.436 1-1 1-.564 0-1-.436-1-1 0-.564.436-1 1-1z"
+  })));
+};
+/* harmony default export */ const share = (SvgShare);
 ;// CONCATENATED MODULE: ./public/assets/icons/handle-13.svg
 var handle_13_path;
 function handle_13_extends() { handle_13_extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return handle_13_extends.apply(this, arguments); }
@@ -591,7 +706,7 @@ var SvgBottomIcons22 = function SvgBottomIcons22(props) {
 };
 /* harmony default export */ const bottom_icons_22 = (SvgBottomIcons22);
 ;// CONCATENATED MODULE: ./src/app/components/player.js
-/* __next_internal_client_entry_do_not_use__ default auto */ 
+
 
 
 
@@ -631,13 +746,20 @@ Number.prototype.toHHMMSS = function() {
     return (hours > 0 ? hours + ":" : "") + minutes + ":" + seconds;
 };
 function Player() {
+    const router = (0,navigation.useRouter)();
+    const pathname = (0,navigation.usePathname)();
+    const searchParams = (0,navigation.useSearchParams)();
+    const [cookies, setCookie, removeCookie] = (0,cjs.useCookies)([
+        "favorites",
+        "currentSong",
+        "currentTime"
+    ]);
+    const [isLoading, setLoading] = (0,react_.useState)(true);
     const [audio, setAudio] = (0,react_.useState)(null);
     const [volume, setVolume] = (0,react_.useState)(0.5);
     const [progress, setProgress] = (0,react_.useState)(0);
     const [newProgress, setNewProgress] = (0,react_.useState)(0);
     const [trackListOpened, setTrackListOpened] = (0,react_.useState)(false);
-    const [data, setData] = (0,react_.useState)(null);
-    const [isLoading, setLoading] = (0,react_.useState)(false);
     const [index, setIndex] = (0,react_.useState)(0);
     const [pause, setPause] = (0,react_.useState)(true);
     const [currentTime, setCurrentTime] = (0,react_.useState)("00:00");
@@ -650,13 +772,11 @@ function Player() {
         duration: ""
     });
     const [musicList, setMusicList] = (0,react_.useState)([]);
-    const audioTag = (0,react_.useRef)();
     const refHandleVolume = (0,react_.useRef)(null);
     const refVolumeBarCtrl = (0,react_.useRef)(null);
     const [volumeHandleLeft, setVolumeHandleLeft] = (0,react_.useState)(0);
     const [volumeBarSize, setVolumeBarSize] = (0,react_.useState)(0);
     const [handleVolumeDown, setHandleVolumeDown] = (0,react_.useState)(false);
-    const refHandleProgress = (0,react_.useRef)(null);
     const refProgressBar = (0,react_.useRef)(null);
     const [progressHandleLeft, setProgressHandleLeft] = (0,react_.useState)(0);
     const [progressBarSize, setProgressBarSize] = (0,react_.useState)(0);
@@ -664,6 +784,7 @@ function Player() {
     const [spannedTime, setSpannedTime] = (0,react_.useState)("");
     const [audioLoop, setAudioLoop] = (0,react_.useState)(false);
     const [audioShuffle, setAudioShuffle] = (0,react_.useState)(false);
+    const [favoriteList, setFavoriteList] = (0,react_.useState)([]);
     const resizeComponents = ()=>{
         const { width: volumeBarWidth } = refVolumeBarCtrl.current.getBoundingClientRect();
         setVolumeHandleLeft(volumeBarWidth * volume);
@@ -683,32 +804,59 @@ function Player() {
     };
     (0,react_.useEffect)(()=>{
         if (musicList.length === 0) {
-            setLoading(true);
             getTracks().then((data)=>{
-                console.log(data);
-                setCurrentSong(data[0]);
                 setMusicList(data);
-                setLoading(false);
+                if (typeof cookies["favorites"] !== "undefined" && cookies["favorites"].length) {
+                    setFavoriteList(cookies["favorites"]);
+                }
+                let id = pathname.match(/\/([a-z0-9]+)/gi);
+                if (id !== null && id.length > 0) {
+                    id = id[0].replace("/", "");
+                    let index = data.findIndex((item)=>item.id === id);
+                    setCurrentSong(data[index]);
+                    setIndex(index);
+                } else if (typeof cookies["currentSong"] !== "undefined" && cookies["currentSong"]) {
+                    let index = data.findIndex((item)=>item.id === cookies["currentSong"]);
+                    setCurrentSong(data[index]);
+                    setIndex(index);
+                } else {
+                    setCurrentSong(data[0]);
+                }
             });
         }
         if (audio !== null) {
             audio.volume = volume;
+            if (newProgress !== 0 && !handleProgressDown) {
+                audio.currentTime = audio.duration * newProgress / 100;
+                setNewProgress(0);
+                setProgress(newProgress);
+            }
         }
-        if (audio !== null && newProgress !== 0 && !handleProgressDown) {
-            audio.currentTime = audio.duration * newProgress / 100;
-            setNewProgress(0);
-            setProgress(newProgress);
-        }
-        if (pause) {
-            if (audio !== null) audio.pause();
+        if (pause && !isLoading && audio !== null) {
+            audio.pause();
         } else {
-            if (audio === null) {
+            if (audio === null && musicList.length > 0) {
                 let newAudio = new Audio(musicList[index].file);
-                newAudio.currentTime = 0;
+                if (typeof cookies["currentSong"] !== "undefined" && cookies["currentSong"] === musicList[index].id && typeof cookies["currentTime"] !== "undefined" && cookies["currentTime"]) {
+                    newAudio.currentTime = cookies["currentTime"];
+                } else {
+                    newAudio.currentTime = 0;
+                }
                 newAudio.volume = volume;
-                newAudio.preload = true;
-                newAudio.autoplay = true;
+                newAudio.preload = "metadata";
+                newAudio.autoplay = false;
                 newAudio.loop = audioLoop;
+                if (!isLoading) newAudio.play();
+                setLoading(false);
+                setCookie("currentSong", musicList[index].id, {
+                    path: "/"
+                });
+                router.push("/" + musicList[index].id);
+                newAudio.addEventListener("loadedmetadata", (e)=>{
+                    setProgress(e.target.currentTime / e.target.duration * 100);
+                    setDuration(e.target.duration.toHHMMSS());
+                    setCurrentTime(e.target.currentTime.toHHMMSS());
+                });
                 newAudio.addEventListener("ended", ()=>{
                     if (!audioLoop) {
                         if (audioShuffle) {
@@ -722,10 +870,13 @@ function Player() {
                     if (!newProgress && !handleProgressDown) setProgress(newAudio.currentTime / newAudio.duration * 100);
                     setCurrentTime(newAudio.currentTime.toHHMMSS());
                     setDuration(newAudio.duration.toHHMMSS());
+                    setCookie("currentTime", newAudio.currentTime, {
+                        path: "/"
+                    });
                 });
                 setAudio(newAudio);
                 setCurrentSong(musicList[index]);
-            } else {
+            } else if (audio !== null) {
                 audio.loop = audioLoop;
                 audio.play();
             }
@@ -735,12 +886,18 @@ function Player() {
         }
         resizeComponents();
         window.addEventListener("resize", updateSize);
+        setCookie("favorites", favoriteList, {
+            path: "/"
+        });
     }, [
         index,
         pause,
         volume,
         progress,
-        audioLoop
+        audioLoop,
+        favoriteList,
+        currentSong,
+        handleProgressDown
     ]);
     const playOrPause = ()=>{
         setPause(!pause);
@@ -764,6 +921,7 @@ function Player() {
             playOrPause();
             return;
         }
+        setLoading(true);
         if (audio !== null) audio.pause();
         setAudio(null);
         setIndex(key);
@@ -866,6 +1024,24 @@ function Player() {
     const mutePlayer = ()=>{
         setVolume(0);
     };
+    const addToFavorite = ()=>{
+        if (favoriteList.includes(currentSong.id)) {
+            setFavoriteList(favoriteList.filter((item)=>item !== currentSong.id));
+        } else {
+            setFavoriteList([
+                ...favoriteList,
+                currentSong.id
+            ]);
+        }
+    };
+    const shareTrack = ()=>{
+        console.log(window.location.origin + pathname);
+        navigator.share({
+            title: currentSong.title,
+            text: currentSong.title,
+            url: window.location.origin + pathname
+        }).then(()=>console.log("Successful share")).catch((error)=>console.log("Error sharing", error));
+    };
     return /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
         className: "player",
         children: [
@@ -873,6 +1049,7 @@ function Player() {
                 opened: trackListOpened,
                 close: ()=>setTrackListOpened(!trackListOpened),
                 tracks: musicList,
+                favs: favoriteList,
                 current: index,
                 setCurrent: clickAudio
             }),
@@ -894,9 +1071,20 @@ function Player() {
                             })
                         ]
                     }),
-                    /*#__PURE__*/ jsx_runtime_.jsx("button", {
-                        className: "heart-icon",
-                        children: /*#__PURE__*/ jsx_runtime_.jsx(heart_icon, {})
+                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                        className: "top-icons",
+                        children: [
+                            /*#__PURE__*/ jsx_runtime_.jsx("button", {
+                                className: "heart-icon",
+                                onClick: addToFavorite,
+                                children: favoriteList.includes(currentSong.id) ? /*#__PURE__*/ jsx_runtime_.jsx(heart_icon_filled_04, {}) : /*#__PURE__*/ jsx_runtime_.jsx(heart_icon, {})
+                            }),
+                            /*#__PURE__*/ jsx_runtime_.jsx("button", {
+                                className: "share-icon",
+                                onClick: shareTrack,
+                                children: /*#__PURE__*/ jsx_runtime_.jsx(share, {})
+                            })
+                        ]
                     })
                 ]
             }),
@@ -912,9 +1100,15 @@ function Player() {
             }) : null,
             /*#__PURE__*/ jsx_runtime_.jsx("div", {
                 className: "cover-container",
-                children: /*#__PURE__*/ jsx_runtime_.jsx("img", {
-                    src: isLoading ? "" : currentSong.cover,
-                    height: 200
+                children: isLoading ? /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                    style: {
+                        height: 213
+                    }
+                }) : /*#__PURE__*/ jsx_runtime_.jsx((image_default()), {
+                    src: currentSong.cover,
+                    height: 200,
+                    width: 200,
+                    alt: ""
                 })
             }),
             /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
@@ -1074,79 +1268,7 @@ function Player() {
 /* __next_internal_client_entry_do_not_use__ default auto */ 
 
 
-
-
-
-
-
 function Home() {
-    const [data, setData] = (0,react_.useState)(null);
-    const [isLoading, setLoading] = (0,react_.useState)(false);
-    const [index, setIndex] = (0,react_.useState)(0);
-    const [pause, setPause] = (0,react_.useState)(true);
-    const [currentTime, setCurrentTime] = (0,react_.useState)("0:00");
-    const [duration, setDuration] = (0,react_.useState)("0:00");
-    const [currentSong, setCurrentSong] = (0,react_.useState)({
-        name: "",
-        author: "",
-        cover: "",
-        file: "",
-        duration: ""
-    });
-    const [musicList, setMusicList] = (0,react_.useState)([]);
-    const audioTag = (0,react_.useRef)();
-    const getTracks = async ()=>{
-        const res = await fetch("/api/files");
-        return res.json();
-    };
-    (0,react_.useEffect)(()=>{
-        if (musicList.length === 0) {
-            setLoading(true);
-            getTracks().then((data)=>{
-                console.log(data);
-                setCurrentSong(data[0]);
-                setMusicList(data);
-                setLoading(false);
-            });
-        }
-        if (audioTag.current) {
-            if (pause) {
-                audioTag.current.pause();
-            } else {
-                audioTag.current = new Audio(musicList[index].audio);
-                audioTag.current.play();
-            }
-        }
-    }, [
-        index,
-        pause
-    ]);
-    const playOrPause = ()=>{
-        setPause(!pause);
-    };
-    const prevSong = ()=>{
-        if (index === 0) {
-            clickAudio(musicList.length - 1);
-        } else {
-            clickAudio(index - 1);
-        }
-    };
-    const nextSong = ()=>{
-        if (index === musicList.length - 1) {
-            clickAudio(0);
-        } else {
-            clickAudio(index + 1);
-        }
-    };
-    function clickAudio(key) {
-        if (key === index) {
-            playOrPause();
-            return;
-        }
-        audioTag.current.pause();
-        setIndex(key);
-        setPause(false);
-    }
     return /*#__PURE__*/ jsx_runtime_.jsx(Player, {});
 }
 
@@ -1266,7 +1388,7 @@ __webpack_require__.r(__webpack_exports__);
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [381,949], () => (__webpack_exec__(6113)));
+var __webpack_exports__ = __webpack_require__.X(0, [381,203], () => (__webpack_exec__(6113)));
 module.exports = __webpack_exports__;
 
 })();
