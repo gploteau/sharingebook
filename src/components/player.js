@@ -46,7 +46,7 @@ Number.prototype.toHHMMSS = function () {
     return (hours > 0 ? hours + ':' : "") + minutes + ':' + seconds;
 }
 
-export default function Player() {
+export default function Player(props) {
     const router = useRouter()
     const pathname = usePathname()
     const searchParams = useSearchParams()
@@ -118,12 +118,10 @@ export default function Player() {
                     if (typeof cookies['favorites'] !== 'undefined' && cookies['favorites'].length) {
                         setFavoriteList(cookies['favorites'])
                     }
-                    let id = pathname.match(/\/([a-z0-9]+)/gi);
                     let startTrack = data[0];
                     let startIndex = -1;
-                    if (id !== null && id.length > 0 && id !== currentSong.id) {
-                        id = id[0].replace('/', '');
-                        let index = data.findIndex((item) => item.id === id);
+                    if(props.track_id) {
+                        let index = data.findIndex((item) => item.id === props.track_id);
                         if (index !== -1) {
                             startTrack = data[index];
                             startIndex = index;
