@@ -107,13 +107,10 @@ export default function Player(props) {
     }
 
     useEffect(() => {
-        console.log('useEffect');
 
         if (musicList.length === 0) {
-            console.log('get tracks');
             getTracks()
                 .then((data) => {
-                    console.log('tracks loaded');
                     setMusicList(data)
                     if (typeof cookies['favorites'] !== 'undefined' && cookies['favorites'].length) {
                         setFavoriteList(cookies['favorites'])
@@ -157,7 +154,6 @@ export default function Player(props) {
         } else {
 
             if (audio === null && musicList.length > 0) {
-                console.log('init audio');
                 setPause(true);
                 let newAudio = new Audio(musicList[index].file)
 
@@ -165,12 +161,13 @@ export default function Player(props) {
                 setCurrentTime('00:00');
                 setCurrentTime('00:00');
 
-                if (typeof cookies['currentSong'] !== 'undefined' && cookies['currentSong'] === musicList[index].id &&
+/*                if (typeof cookies['currentSong'] !== 'undefined' && cookies['currentSong'] === musicList[index].id &&
                     typeof cookies['currentTime'] !== 'undefined' && cookies['currentTime']) {
                     newAudio.currentTime = cookies['currentTime'];
                 } else {
                     newAudio.currentTime = 0;
-                }
+                }*/
+                newAudio.currentTime = 0;
 
                 newAudio.volume = volume;
                 newAudio.preload = 'metadata';
@@ -186,9 +183,6 @@ export default function Player(props) {
                 });
 
                 router.push('/' + musicList[index].id);
-                console.log('push to ' + musicList[index].id);
-
-                //router.push('/' + musicList[index].id, null, { shallow: true })
 
                 newAudio.addEventListener('loadedmetadata', (e) => {
                     setProgress(e.target.currentTime / e.target.duration * 100);
