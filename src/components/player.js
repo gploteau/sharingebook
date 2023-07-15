@@ -107,10 +107,13 @@ export default function Player() {
     }
 
     useEffect(() => {
+        console.log('useEffect');
 
         if (musicList.length === 0) {
+            console.log('get tracks');
             getTracks()
                 .then((data) => {
+                    console.log('tracks loaded');
                     setMusicList(data)
                     if (typeof cookies['favorites'] !== 'undefined' && cookies['favorites'].length) {
                         setFavoriteList(cookies['favorites'])
@@ -118,7 +121,7 @@ export default function Player() {
                     let id = pathname.match(/\/([a-z0-9]+)/gi);
                     let startTrack = data[0];
                     let startIndex = -1;
-                    if (id !== null && id.length > 0) {
+                    if (id !== null && id.length > 0 && id !== currentSong.id) {
                         id = id[0].replace('/', '');
                         let index = data.findIndex((item) => item.id === id);
                         if (index !== -1) {
@@ -156,6 +159,7 @@ export default function Player() {
         } else {
 
             if (audio === null && musicList.length > 0) {
+                console.log('init audio');
                 setPause(true);
                 let newAudio = new Audio(musicList[index].file)
 
@@ -184,6 +188,9 @@ export default function Player() {
                 });
 
                 router.push('/' + musicList[index].id);
+                console.log('push to ' + musicList[index].id);
+
+                //router.push('/' + musicList[index].id, null, { shallow: true })
 
                 newAudio.addEventListener('loadedmetadata', (e) => {
                     setProgress(e.target.currentTime / e.target.duration * 100);
