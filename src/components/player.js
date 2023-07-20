@@ -102,7 +102,7 @@ export default function Player(props) {
     }, []);
 
     const getTracks = async () => {
-        const res = await fetch('/api/files')
+        const res = await fetch('https://www.gilles-ploteau.fr/files/db.json')
         return res.json()
     }
 
@@ -161,13 +161,12 @@ export default function Player(props) {
                 setCurrentTime('00:00');
                 setCurrentTime('00:00');
 
-/*                if (typeof cookies['currentSong'] !== 'undefined' && cookies['currentSong'] === musicList[index].id &&
+                if (typeof cookies['currentSong'] !== 'undefined' && cookies['currentSong'] === musicList[index].id &&
                     typeof cookies['currentTime'] !== 'undefined' && cookies['currentTime']) {
                     newAudio.currentTime = cookies['currentTime'];
                 } else {
                     newAudio.currentTime = 0;
-                }*/
-                newAudio.currentTime = 0;
+                }
 
                 newAudio.volume = volume;
                 newAudio.preload = 'metadata';
