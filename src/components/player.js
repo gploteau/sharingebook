@@ -426,6 +426,7 @@ export default function Player(props) {
 
     return (
         <div className="player">
+            {typeof currentSong !== 'undefined' ? <link rel="preload" as="fetch" href={currentSong.file}/> : null}
             <TracksList opened={trackListOpened}
                         close={() => setTrackListOpened(!trackListOpened)}
                         tracks={musicList}
