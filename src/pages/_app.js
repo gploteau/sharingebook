@@ -1,6 +1,6 @@
 import {SessionProvider, useSession} from "next-auth/react"
 import {CookiesProvider} from "react-cookie"
-import {GoogleAnalytics} from "nextjs-google-analytics";
+import { Analytics } from '@vercel/analytics/react';
 
 export default function App({Component, pageProps: {session, ...pageProps}}) {
 
@@ -16,6 +16,7 @@ export default function App({Component, pageProps: {session, ...pageProps}}) {
                 ) : (
                     <Component {...pageProps} />
                 )}
+                <Analytics />
             </SessionProvider>
         </>
     );
