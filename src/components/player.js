@@ -102,7 +102,7 @@ export default function Player(props) {
     }, []);
 
     const getTracks = async () => {
-        const res = await fetch('https://www.gilles-ploteau.fr/files/db.json')
+        const res = await fetch(process.env.NEXT_PUBLIC_TRACKS_DB_URL)
         return res.json()
     }
 
