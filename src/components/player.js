@@ -162,8 +162,8 @@ export default function Player(props) {
                 setCurrentTime('00:00');
 
                 if (typeof cookies['currentSong'] !== 'undefined' && cookies['currentSong'] === musicList[index].id &&
-                    typeof cookies['currentTime'] !== 'undefined' && cookies['currentTime']) {
-                    newAudio.currentTime = cookies['currentTime'];
+                    typeof cookies['currentTime_' + cookies['currentSong']] !== 'undefined' && cookies['currentTime_' + cookies['currentSong']]) {
+                    newAudio.currentTime = cookies['currentTime_' + cookies['currentSong']];
                 } else {
                     newAudio.currentTime = 0;
                 }
@@ -218,7 +218,7 @@ export default function Player(props) {
                     setCurrentTime(newAudio.currentTime.toHHMMSS());
                     setDuration(newAudio.duration.toHHMMSS());
 
-                    setCookie('currentTime', newAudio.currentTime, {
+                    setCookie('currentTime_' + musicList[index].id, newAudio.currentTime, {
                         path: '/',
                     });
                 });
