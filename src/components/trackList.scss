@@ -1,6 +1,10 @@
 @keyframes marquee {
-  0%   { transform: translate(0, 0); }
-  100% { transform: translate(-100%, 0); }
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-100%, 0);
+  }
 }
 
 .tracks-list {
@@ -73,8 +77,8 @@
 
   .bottom-ctr {
     background: #f0f8ff;
-    -webkit-box-shadow: 0 -10px 18px -12px rgba(51,51,51,.15);
-    box-shadow: 0 -10px 18px -12px rgba(51,51,51,.15);
+    -webkit-box-shadow: 0 -10px 18px -12px rgba(51, 51, 51, .15);
+    box-shadow: 0 -10px 18px -12px rgba(51, 51, 51, .15);
   }
 
   .search-ctr {
@@ -97,7 +101,7 @@
       font-size: 4rem;
       font-weight: 200;
       color: #333;
-      border-bottom: 1px solid rgba(51,51,51,.7);
+      border-bottom: 1px solid rgba(51, 51, 51, .7);
     }
   }
 
@@ -120,6 +124,7 @@
       background: transparent;
       width: 29px;
       padding-top: 2px;
+
       svg {
         fill: #333;
         opacity: .6;
@@ -131,6 +136,7 @@
       border: none;
       background: transparent;
       width: 25px;
+
       svg {
         fill: tomato;
       }

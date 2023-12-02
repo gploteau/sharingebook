@@ -7,21 +7,16 @@ import TracksList from "@/components/tracksList";
 import './player.scss'
 
 import ShareIcon from 'public/assets/icons/share.svg';
-
 import HeartIcon from 'public/assets/icons/heart-icon.svg';
 import FullHeartIcon from 'public/assets/icons/heart-icon-filled-04.svg';
-
 import HandleIcon from 'public/assets/icons/handle-13.svg';
 import HandleDownIcon from 'public/assets/icons/handle-14.svg';
-
 import NextTrackIcon from 'public/assets/icons/control-icon-12.svg';
 import PrevTrackIcon from 'public/assets/icons/control-icon-11.svg';
 import PlayTrackIcon from 'public/assets/icons/control-icon-10.svg';
 import PauseTrackIcon from 'public/assets/icons/control-icon-09.svg';
-
 import SpeakerIcon from 'public/assets/icons/volume-icon-15.svg';
 import SpeakerMuteIcon from 'public/assets/icons/volume-icon-muted-15.svg';
-
 import TrackListIcon from 'public/assets/icons/bottom-icons-20.svg';
 import LoopIcon from 'public/assets/icons/bottom-icons-21.svg';
 import ShuffleIcon from 'public/assets/icons/bottom-icons-22.svg';
@@ -117,7 +112,7 @@ export default function Player(props) {
                     }
                     let startTrack = data[0];
                     let startIndex = -1;
-                    if(props.track_id) {
+                    if (props.track_id) {
                         let index = data.findIndex((item) => item.id === props.track_id);
                         if (index !== -1) {
                             startTrack = data[index];
@@ -425,7 +420,7 @@ export default function Player(props) {
 
     return (
         <div className="player">
-            {typeof currentSong !== 'undefined' ? <link rel="preload" as="fetch" href={currentSong.file}/> : null}
+            {typeof currentSong !== 'undefined' ? <link rel="prefetch" as="audio" href={currentSong.file}/> : null}
             <TracksList opened={trackListOpened}
                         close={() => setTrackListOpened(!trackListOpened)}
                         tracks={musicList}

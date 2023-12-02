@@ -1,6 +1,6 @@
 {
   "name": "sharingebook",
-  "version": "1.0",
+  "version": "1.1",
   "private": true,
   "scripts": {
     "ssl": "local-ssl-proxy --source 3030 --target 3000",

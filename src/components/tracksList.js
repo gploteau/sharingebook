@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import './trackList.scss'
 
 import BackIcon from 'public/assets/icons/back-btn-23.svg';
@@ -15,7 +15,7 @@ export default function TracksList(props) {
         const list = document.getElementById('tracksListCtr');
         const items = list.getElementsByTagName('li');
         for (let i = 0; i < items.length; ++i) {
-            if(items[i].innerText.toLowerCase().indexOf(value) > -1) {
+            if (items[i].innerText.toLowerCase().indexOf(value) > -1) {
                 items[i].style.display = 'block';
             } else {
                 items[i].style.display = 'none';
@@ -28,13 +28,15 @@ export default function TracksList(props) {
             <div className="tracks-list-ctr" id="tracksListCtr">
                 <ul>
                     {props.tracks.map((track, index) => {
-                        if(onlyFavorite && !props.favs.includes(track.id)) {
-                            return null;
+                            if (onlyFavorite && !props.favs.includes(track.id)) {
+                                return null;
+                            }
+                            return (
+                                <li onClick={() => props.setCurrent(index)}
+                                    className={index === props.current ? 'active' : ''} key={index}>
+                                    <span>{index === props.current ? <strong>&gt; </strong> : null}{track.title}</span></li>
+                            )
                         }
-                        return (
-                            <li onClick={() => props.setCurrent(index)} className={index === props.current ? 'active' : ''} key={index}><span>{index === props.current ? <strong>&gt; </strong> : null}{track.title}</span></li>
-                        )
-                    }
                     )}
                 </ul>
             </div>
@@ -44,10 +46,10 @@ export default function TracksList(props) {
                 </div>
                 <div className="bottom-btns-ctr">
                     <button className="back-btn" onClick={props.close}>
-                        <BackIcon />
+                        <BackIcon/>
                     </button>
                     <button className="favs-btn" onClick={() => setOnlyFavorite(!onlyFavorite)}>
-                        {onlyFavorite ? <FullHeartIcon/> : <HeartIcon />}
+                        {onlyFavorite ? <FullHeartIcon/> : <HeartIcon/>}
                     </button>
                 </div>
             </div>

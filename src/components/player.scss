@@ -2,17 +2,24 @@ $base: #000;
 $background: #f0f8ff;
 
 @keyframes scale1 {
-  0% {transform: scale(1);
+  0% {
+    transform: scale(1);
   }
-  50% {transform: scale(1.5);
+  50% {
+    transform: scale(1.5);
   }
-  100% {transform: scale(1);
+  100% {
+    transform: scale(1);
   }
 }
 
 @keyframes rotate {
-  0% {  transform: rotate(0)}
-  100% { transform: rotate(360deg)}
+  0% {
+    transform: rotate(0)
+  }
+  100% {
+    transform: rotate(360deg)
+  }
 }
 
 .player {
@@ -74,6 +81,7 @@ $background: #f0f8ff;
             fill: tomato;
           }
         }
+
         &:hover {
           animation: scale1 2s infinite;
         }
@@ -114,7 +122,7 @@ $background: #f0f8ff;
     }
 
     .track-loader {
-      z-index:2;
+      z-index: 2;
       position: absolute;
       width: 201px;
       height: 201px;
@@ -126,6 +134,7 @@ $background: #f0f8ff;
         position: absolute;
         inset: 0;
       }
+
       &:after {
         box-shadow: 0 6px 0 tomato inset;
         animation: rotate 2s linear infinite;
@@ -257,8 +266,8 @@ $background: #f0f8ff;
       height: 56px;
       background: #f0f8ff;
       border-radius: 100000px;
-      -webkit-box-shadow: 0 0 10px rgba(0,0,0,.1);
-      box-shadow: 0 0 10px rgba(0,0,0,.1);
+      -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+      box-shadow: 0 0 10px rgba(0, 0, 0, .1);
       padding: 12px;
 
       svg {
@@ -274,8 +283,8 @@ $background: #f0f8ff;
       height: 56px;
       background: #f0f8ff;
       border-radius: 100000px;
-      -webkit-box-shadow: 0 0 10px rgba(0,0,0,.1);
-      box-shadow: 0 0 10px rgba(0,0,0,.1);
+      -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+      box-shadow: 0 0 10px rgba(0, 0, 0, .1);
       padding: 12px;
 
       svg {

@@ -1,6 +1,6 @@
 import {SessionProvider, useSession} from "next-auth/react"
 import {CookiesProvider} from "react-cookie"
-import { Analytics } from '@vercel/analytics/react';
+import {Analytics} from '@vercel/analytics/react';
 
 export default function App({Component, pageProps: {session, ...pageProps}}) {
 
@@ -11,19 +11,22 @@ export default function App({Component, pageProps: {session, ...pageProps}}) {
                     <CookiesProvider>
                         <Auth>
                             <Component {...pageProps} />
+                            <Analytics/>
                         </Auth>
                     </CookiesProvider>
                 ) : (
-                    <Component {...pageProps} />
+                    <>
+                        <Component {...pageProps} />
+                        <Analytics/>
+                    </>
                 )}
-                <Analytics />
+
             </SessionProvider>
         </>
     );
 }
 
 function Auth({children}) {
-    // if `{ required: true }` is supplied, `status` can only be "loading" or "authenticated"
     const {status, data: session} = useSession({required: true})
 
     if (status === "loading") {
