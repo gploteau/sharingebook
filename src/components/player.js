@@ -154,7 +154,6 @@ export default function Player(props) {
 
                 setProgress(0);
                 setCurrentTime('00:00');
-                setCurrentTime('00:00');
 
                 if (typeof cookies['currentSong'] !== 'undefined' && cookies['currentSong'] === musicList[index].id &&
                     typeof cookies['currentTime_' + cookies['currentSong']] !== 'undefined' && cookies['currentTime_' + cookies['currentSong']]) {
